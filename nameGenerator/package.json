@@ -4,7 +4,7 @@
   "description": "Now we can generate a lot of names",
   "main": "index.js",
   "bin": {
-    "namegenerator": "bin/index.js"
+    "name": "bin/nameGenerator.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
