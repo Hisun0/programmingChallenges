@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { setQuestions, randomLetter, capitalize, randomVowel } from '../src/random.js';
+import { setQuestions, randomLetter, capitalize } from '../src/random.js';
 
 const vowelsENG = 'aeiouy';
 const consonantsENG = 'abcdfghjklmnpqrstvwxz';
