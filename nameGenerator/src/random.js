@@ -1,21 +1,21 @@
 import readlineSync from 'readline-sync';
 
-const vowels = 'aeiouy';
-const consonants = 'abcdfghjklmnpqrstvwxz';
-
 function setQuestions() {
+    const arrOfValues = [];
     const nameLength = readlineSync.question('What name length do you want?\n');
-    return nameLength;
+    const nameLanguage = readlineSync.question('What language of name do you want?\nru/en: ');
+    arrOfValues.push(nameLength, nameLanguage);
+    return arrOfValues;
 }
 
-function randomVowel() {
-    const vowelIndex = Math.floor(Math.random() * vowels.length);
-    return vowels[vowelIndex];
+function randomVowel(vowel) {
+    const vowelIndex = Math.floor(Math.random() * vowel.length);
+    return vowel[vowelIndex];
 }
 
-function randomConsonant() {
-    const consonantIndex = Math.floor(Math.random() * consonants.length);
-    return consonants[consonantIndex];
+function randomConsonant(consonant) {
+    const consonantIndex = Math.floor(Math.random() * consonant.length);
+    return consonant[consonantIndex];
 }
 
 function checkLetter(letters, symbol) {
@@ -27,14 +27,12 @@ function checkLetter(letters, symbol) {
     return false;
 }
 
-function randomLetter() {
-    
-    const nameLength = setQuestions();
+function randomLetter(vowels, consonants, nameLength) {
     let resultName = '';
-
+    
     for (let letter = 0; letter < nameLength; letter += 1) {
-        let vowel = randomVowel();
-        let consonant = randomConsonant();
+        let vowel = randomVowel(vowels);
+        let consonant = randomConsonant(consonants);
         
         if (resultName.length === 0) resultName += consonant;
 
